@@ -76,38 +76,6 @@ The dataset used in this project is derived from [GEO Series GSE126848](https://
 
 ---
 
-## 🗂️ How to Use
-
-1. Clone the repository:
-```bash
-git clone https://github.com/yourusername/CGAN-GeneExpression.git
-cd CGAN-GeneExpression
-```
-
-2. Setup environment:
-```bash
-pip install -r requirements.txt
-```
-
-3. Preprocess the data:
-```bash
-python preprocessing/preprocess_labels_and_counts.py
-```
-
-4. Train the models:
-```bash
-python training/train_vae.py
-python training/train_gan.py
-python training/train_cgan.py
-```
-
-5. Visualize outputs:
-```bash
-python visualization/pca_tsne_visualize.py
-```
-
----
-
 ## 📌 Results Highlights
 
 - CGAN shows superior class-targeted generation (e.g., NAFL/NASH clustering)
