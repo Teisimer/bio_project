@@ -23,8 +23,8 @@ The dataset used in this project is derived from [GEO Series GSE126848](https://
 | `GSE126848_series_matrix.xlsx` | 原始 meta 資料，包含樣本編號、分類與基本描述，用於建立樣本與類別對應表 |
 | `GSE126848_Gene_counts_raw.xlsx` | GEO 提供的 RNA-seq 原始讀數表，每一列為基因、每欄為樣本 |
 | `GSE126848_Gene_counts_keyname.xlsx` | 根據 `series_matrix` 對 `raw` 表欄位重新命名為分類名稱，利於後續統計與建模 |
-| `processed_data.csv` | 透過 iDEP 平台篩選低表現基因後的結果，使用 Min CPM = 0.5, library ≥ 1 條件處理 |
 | `converted_counts_data.csv` | 使用 `log2(CPM + 4)` 正規化轉換後的輸出資料，為主模型的輸入資料之一 |
+| `processed_data.csv` | 透過 iDEP 平台篩選低表現基因後的結果，使用 Min CPM = 0.5, library ≥ 1 條件處理，最後模型的輸入資料 |
 ---
 
 ## 📂 Project Structure
@@ -33,9 +33,8 @@ The dataset used in this project is derived from [GEO Series GSE126848](https://
 ├── data/
 │   ├── GSE126848_series_matrix.txt
 │   ├── GSE126848_Gene_counts_raw.txt
-│   └── GSE126848_Gene_counts_keyname.txt  # Preprocessed mapping
-├── preprocessing/
-│   └── preprocess_labels_and_counts.py
+│   └── GSE126848_Gene_counts_keyname.txt  
+│   └── processed_data.csv # final input data
 ├── models/
 │   ├── vae
 │   ├── gan
