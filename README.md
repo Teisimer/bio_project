@@ -7,6 +7,24 @@ This repository contains the complete pipeline for generating and evaluating syn
 
 The dataset used in this project is derived from [GEO Series GSE126848](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE126848), which profiles hepatic transcriptome signatures in patients with various stages of non-alcoholic fatty liver disease (NAFLD) and control groups (Normal and Obese).
 
+## 📁 Dataset 說明
+
+本專案使用的資料集為 GEO 系統中的 **GSE126848**，其探討了 **非酒精性脂肪肝疾病（NAFLD）** 不同階段下的人體肝臟轉錄體表現，包含 4 類樣本：
+
+- Normal（正常體重）
+- Obese（肥胖）
+- NAFL（脂肪肝）
+- NASH（脂肪性肝炎）
+
+本研究依據以下檔案進行資料處理與模型輸入：
+
+| 檔名 | 功能說明 |
+|------|----------|
+| `GSE126848_series_matrix.xlsx` | 原始 meta 資料，包含樣本編號、分類與基本描述，用於建立樣本與類別對應表 |
+| `GSE126848_Gene_counts_raw.xlsx` | GEO 提供的 RNA-seq 原始讀數表，每一列為基因、每欄為樣本 |
+| `GSE126848_Gene_counts_keyname.xlsx` | 根據 `series_matrix` 對 `raw` 表欄位重新命名為分類名稱，利於後續統計與建模 |
+| `processed_data.csv` | 透過 iDEP 平台篩選低表現基因後的結果，使用 Min CPM = 0.5, library ≥ 1 條件處理 |
+| `converted_counts_data.csv` | 使用 `log2(CPM + 4)` 正規化轉換後的輸出資料，為主模型的輸入資料之一 |
 ---
 
 ## 📂 Project Structure
