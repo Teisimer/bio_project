@@ -19,22 +19,9 @@ The dataset used in this project is derived from [GEO Series GSE126848](https://
 ├── preprocessing/
 │   └── preprocess_labels_and_counts.py
 ├── models/
-│   ├── vae.py
-│   ├── gan.py
-│   └── cgan.py
-├── training/
-│   ├── train_vae.py
-│   ├── train_gan.py
-│   └── train_cgan.py
-├── visualization/
-│   ├── pca_tsne_visualize.py
-│   └── plot_utils.py
-├── generated_data/
-│   └── saved_synthetic_samples.npy
-├── notebooks/
-│   └── Full_pipeline_analysis.ipynb
-├── README.md
-└── requirements.txt
+│   ├── vae
+│   ├── gan
+│   └── cgan
 ```
 
 ---
